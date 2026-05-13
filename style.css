@@ -1,0 +1,124 @@
+#menuToggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10001;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff6b9d, #667eea);
+  color: white;
+}
+
+/* PANEL */
+.controls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.95);
+  padding: 60px 20px 20px 20px;
+  color: white;
+
+  box-sizing: border-box; /* 🔥 QUAN TRỌNG */
+
+  transform: translateX(-100%); /* 🔥 ĐỔI SANG -100% */
+  transition: transform 0.4s ease;
+
+  z-index: 10000;
+}
+
+.controls.active {
+  transform: translateX(0);
+}
+
+/* Nút X */
+#closePanel {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+/* POPUP THƯ */
+.letter-popup {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s;
+
+  z-index: 999999;
+}
+
+.letter-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.letter-box {
+  width: 90%;
+  max-width: 500px;
+
+  background: #1e1e1e;
+  color: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  transform: scale(0.7);
+  transition: 0.3s;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 0 30px rgba(255, 0, 100, 0.4);
+}
+
+.letter-popup.active .letter-box {
+  transform: scale(1);
+}
+
+#closeLetter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ff4d4d;
+  color: white;
+
+  cursor: pointer;
+}
+
+#typingText {
+  margin-top: 20px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  font-size: 17px;
+}
